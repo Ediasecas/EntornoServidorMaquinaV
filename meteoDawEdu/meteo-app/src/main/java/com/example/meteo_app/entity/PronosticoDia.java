@@ -1,7 +1,15 @@
 package com.example.meteo_app.entity;
 
-import jakarta.persistence.*;
 import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "pronositcoDia") // Asegúrate de que el nombre coincide con la tabla en la base de datos
@@ -11,29 +19,33 @@ public class PronosticoDia {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generación del ID
     private Integer idPronosticoDias;
 
-    @Column(name = "idCiudad2", nullable = false) // Mapea la columna idCiudad2
-    private Integer idCiudad;
+    @Column(nullable = false) // Mapea la columna idCiudad2
+    private Integer idCiudad2;
 
-    @Column(name = "salidaSol") // Hora de salida del sol
+    @Column(nullable = false) // Hora de salida del sol
     private Date salidaSol;
 
-    @Column(name = "bajadaSol") // Hora de bajada del sol
+    @Column(nullable = false) // Hora de bajada del sol
     private Date bajadaSol;
 
-    @Column(name = "humedad") // Nivel de humedad
+    @Column(nullable = false) // Nivel de humedad
     private Integer humedad;
 
-    @Column(name = "climaPronDia") // Tipo de clima
+    @Column(nullable = false) // Tipo de clima
     private String climaPronDia;
 
-    @Column(name = "fechaPronDia") // Fecha del pronóstico
+    @Column(nullable = false) // Fecha del pronóstico
     private Date fechaPronDia;
 
-    @Column(name = "precipitaciones") // Precipitaciones en mm
+    @Column(nullable = false) // Precipitaciones en mm
     private Integer precipitaciones;
 
-    @Column(name = "velViento") // Velocidad del viento en km/h
+    @Column(nullable = false) // Velocidad del viento en km/h
     private Integer velViento;
+
+    @ManyToOne
+    @JoinColumn(name = "idCiudad", nullable = false)
+    private Ciudad ciudad;
 
     // Getters y Setters
 
@@ -45,12 +57,12 @@ public class PronosticoDia {
         this.idPronosticoDias = idPronosticoDias;
     }
 
-    public Integer getIdCiudad() {
-        return idCiudad;
+    public Integer getIdCiudad2() {
+        return idCiudad2;
     }
 
-    public void setIdCiudad(Integer idCiudad) {
-        this.idCiudad = idCiudad;
+    public void setIdCiudad2(Integer idCiudad2) {
+        this.idCiudad2 = idCiudad2;
     }
 
     public Date getSalidaSol() {
@@ -108,4 +120,14 @@ public class PronosticoDia {
     public void setVelViento(Integer velViento) {
         this.velViento = velViento;
     }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+    
 }
+    

@@ -8,28 +8,25 @@
 </head>
 <body>
     <h1>Pronósticos del Día</h1>
-    <table >
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha</th>
-                <th>Clima</th>
-                <th>Humedad</th>
-                <th>Precipitaciones</th>
-                <th>Velocidad del Viento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="pronostico : ${pronosticos}">
-                <td th:text="${pronostico.idPronosticoDias}"></td>
-                <td th:text="${pronostico.fechaPronDia}"></td>
-                <td th:text="${pronostico.climaPronDia}"></td>
-                <td th:text="${pronostico.humedad}"></td>
-                <td th:text="${pronostico.precipitaciones}"></td>
-                <td th:text="${pronostico.velViento}"></td>
-            </tr>
-        </tbody>
-    </table>
-
+        <div class="tablaxd"> 
+            <table >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Clima</th>
+                        <th>Humedad</th>
+                        <th>Precipitaciones</th>
+                        <th>Velocidad del Viento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="pronostico : ${pronosticos}">
+                        <td th:text="${pronostico.idPronosticoDias}"></td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>       
 </body>
 </html>
