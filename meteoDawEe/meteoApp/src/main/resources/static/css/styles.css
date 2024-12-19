@@ -1,10 +1,3 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-image: url('/images/imgnFondo.jpg'); 
@@ -65,12 +58,6 @@ text-align: left;
 font-size: 12px;
 }
 
-.tituloHora {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
 
 .listaHoras {
     display: flex;
@@ -104,16 +91,6 @@ font-size: 12px;
     color: #ffebcd; 
 }
 
-
-.pronosticoPrincipal {
-    margin-top: 30px; 
-    text-align: center;
-}
-
-.pronosticoPrincipal h3 {
-    color: #555; 
-    margin-bottom: 10px; 
-}
 
 .listaDiitas {
     margin-top: 20px;
