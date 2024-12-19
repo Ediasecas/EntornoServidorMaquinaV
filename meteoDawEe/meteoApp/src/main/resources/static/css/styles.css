@@ -1,0 +1,290 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/imgnFondo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fdfdfd;
+}
+
+
+.container {
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+}
+
+.pronosticoActual {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#laher {
+    color: #ffffff;
+    font-size: 3em;
+   
+}
+
+#tempMediaxd {
+    font-size: 4em;
+    font-family: 'SF Pro Display', 'SF Pro Text', sans-serif;
+    font-weight: 60; 
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.tempMax {
+    color: #ffffff;
+    font-size: 1.1em;
+}
+
+
+.pronosticoHora {
+    background-color: rgba(106, 114, 126, 0.7); 
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    color: white;
+}
+
+#previsionName{
+color: #adabab;
+margin-bottom: -20px;
+padding: 10px;
+text-align: left;
+font-size: 12px;
+}
+
+.tituloHora {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+
+.listaHoras {
+    display: flex;
+    gap: 10px; 
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.objeto {
+    flex: 0 0 80px; 
+    height: 100px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hora {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.temp {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #ffebcd; 
+}
+
+
+.pronosticoPrincipal {
+    margin-top: 30px; 
+    text-align: center;
+}
+
+.pronosticoPrincipal h3 {
+    color: #555; 
+    margin-bottom: 10px; 
+}
+
+.listaDiitas {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(106, 114, 126, 0.7); 
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.listaDiitas p {
+    font-size: 1.2em;
+    color:  rgba(106, 114, 126, 0.7); 
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+   
+}
+
+.listaDias {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.objeto1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    border-bottom: 1px solid #ddd; 
+    transition: all 0.3s ease-in-out;
+    font-family: Arial, sans-serif;
+ 
+}
+
+
+.objeto1:last-child {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom: none; 
+}
+
+.objeto1:hover {
+    background-color: rgb(173, 173, 173); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.objeto1 .fecha {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    flex: 1; 
+}
+
+.objeto1 .temp-max {
+    font-size: 1em;
+    color: #ffffff; 
+    font-weight: bold;
+    margin-left: 20px;
+    flex: 0.5;
+    text-align: center;
+}
+
+.objeto1 .temp-min {
+    font-size: 1em;
+    color: #c5c5c5; 
+    font-weight: bold;
+    margin-left: 20px;
+    flex: 0.5;
+    text-align: center;
+}
+
+
+#spanMin{
+    margin-left: 10px;
+}
+
+.iconos {
+    display: inline-block; 
+    width: 40px; 
+    height: 40px; 
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.container3 {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "a1 a2";
+}
+  
+  .a1 { grid-area: a1; 
+    background-color: rgba(106, 114, 126, 0.7); 
+    padding: 20px;
+    border-radius: 12px;
+}
+  
+  .a2 { grid-area: a2; 
+    background-color: rgba(106, 114, 126, 0.7); 
+    padding: 20px;
+    border-radius: 12px;
+}
+  
+#precipitacion{
+    color: #adabab;
+    margin-top: -40px;
+    text-align: center;
+}
+
+#precipitacionXd{
+    margin-top: 20px;
+    font-size: 3em;
+    text-align: center;
+}
+    
+.aguaIcon{
+    width: 20px;
+    margin-top: 28px;
+    margin-right: 2px;
+}
+
+#salida{
+    color: #adabab;
+    margin-top: -10px;
+    text-align: center;
+}
+
+#salidaXd{
+    margin-top: 20px;
+    font-size: 3em;
+    text-align: center;
+}
+
+.solIcon{
+    width: 60px;
+}
+
+#pSol{
+    text-align: center;
+}
+
+#pFechita{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.diaChoose{
+    margin-bottom: 20px;
+    background-color: rgba(131, 146, 168, 0.3); 
+    padding: 20px;
+    border-radius: 12px;
+    width: 270px;
+    text-align: left;
+    font-size: 1em;
+}
+
+.classLabel{
+   font-size: 1em;
+   font-weight: bold;
+}
+
+.classSelect{
+    padding: 10px;
+    background-color: rgba(131, 146, 168, 0.3); 
+    border: none;
+    border-radius: 12px;
+}
+

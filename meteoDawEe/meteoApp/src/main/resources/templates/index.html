@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeteoDaw</title>
+    <link rel="stylesheet" href="/css/styles.css?v=1.1"> 
+</head>
+<body>
+    <div class="container">
+
+        <div class="pronosticoActual">
+            <h2 id="laher"><strong>Berlin</strong></h2>
+            <h3 id="tempMediaxd"><span th:text="${selectedDay.tempMedia}"></span>º</h3>
+            <h3>
+                Max.<span th:text="${selectedDay.tempMax}"></span>°<span id="spanMin">Min.</span>
+                <span  th:text="${selectedDay.tempMin}"></span>°
+            </h3>
+        </div>
+
+        <form  class="diaChoose" method="get" action="/">
+            <label  class="classLabel" for="day">Escoge el Dia:</label>
+            <select class="classSelect" name="day" id="day" onchange="this.form.submit()">
+                <option disabled selected value="">-- Diita --</option>
+                <th:block th:each="dia : ${dias}" class="classTh">
+                    <option th:value="${dia.fecha}" th:text="${dia.fecha}" 
+                            th:selected="${dia.fecha == selectedDay.fecha}">
+                    </option>
+                </th:block>
+            </select>
+        </form>
+
+        <div class="pronosticoHora">
+            <div class="listaHoras">
+                <div class="objeto" th:each="pronostico : ${pronosticos}">                
+                    <div class="hora" th:text="${#temporals.format(pronostico.hora, 'HH:mm')}"></div>
+                    <div class="iconos">
+                        <img th:src="@{${climaImages[pronostico.hora.toString()]}}" alt="Clima" >
+                    </div>
+                    <div class="temp" th:text="${pronostico.temperatura + '°C'}"></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="listaDiitas">
+            <p id="previsionName">PREVISIÓN(7 DÍAS)</p>
+            <div class="listaDias">
+                <th:block th:each="dia : ${dias}">
+                    <div class="objeto1">
+                        <div class="fecha" th:text="${dia.fecha}"></div>
+                        <div class="temp-min" th:text="${dia.tempMin + '°C'}"></div>
+                        <div class="temp-max" th:text="${dia.tempMax + '°C'}"></div>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="a1">
+                <h3 id="precipitacion"> <img class="aguaIcon" src="/images/aguita.png" alt="Imagen Agua">PRECIPITACION</h3>
+                <p id="precipitacionXd"><span  th:text="${selectedDay.precipitaciones}"></span>
+                </p>
+                <p id="pFechita">Prevision del dia <span th:text="${selectedDay.fecha}"></span></p>
+            </div>
+            <div class="a2">
+                <h3 id="salida"> SALIDA DEL SOL</h3>
+                <p id="salidaXd"><span  th:text="${selectedDay.salidaSol}"></span>
+                
+                </p>
+                <p id="pSol"><img class="solIcon" src="/images/salidaSol.png" alt="Imagen Agua"></p>
+            </div>
+        </div>
+       
+        
+    </div>
+</body>
+</html>
